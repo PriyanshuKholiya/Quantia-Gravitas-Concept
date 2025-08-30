@@ -339,7 +339,7 @@ html.theme-light ::selection {
 
 /* Lux Light v3 — paper aesthetic and refined dividers inspired by reference */
 html.theme-light {
-  --paper: #d1ebdb;              /* subtle luxury green parchment */
+  --paper: #e9f0ec;              /* subtle luxury green parchment */
   --ink: #1A1A1A;                /* rich charcoal */
   --muted-ink: #2B2B2B;          /* body text */
   --divider: #E0E4D8;            /* hairline rule with green tint */
