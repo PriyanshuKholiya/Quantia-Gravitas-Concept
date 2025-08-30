@@ -34,15 +34,12 @@ const Section = ({ title, subtitle, id, index, className = "", children }) => (
       <div className="mb-10 sm:mb-12">
         <div className="border-t border-white/10 pt-6">
           {typeof index !== "undefined" && (
-            <p className="mb-3 text-[11px] tracking-[0.3em] uppercase text-neutral-400/80">
+            <h2 className="section-header mb-4 text-[14px] tracking-[0.2em] uppercase text-neutral-400/80">
               ( {String(index).padStart(2, "0")} ) {title}
-            </p>
+            </h2>
           )}
-          <h2 className="fluid-h2 font-editorial tracking-tight text-neutral-100">
-            {title}
-          </h2>
           {subtitle && (
-            <p className="mt-3 max-w-3xl text-neutral-400 leading-relaxed">
+            <p className="mt-3 max-w-3xl text-neutral-400 leading-relaxed card-content">
               {subtitle}
             </p>
           )}
@@ -402,15 +399,15 @@ export default function QuantiaGravitasLanding() {
         </div>
         <div className="mt-8 grid md:grid-cols-2 gap-8 gsap-stagger">
           <div className="card-lift rounded-2xl p-6 border border-white/12 bg-white/[0.03] transition-transform hover:-translate-y-1">
-            <h3 className="fluid-h3 font-semibold text-neutral-100">Vision</h3>
-            <p className="mt-2 text-neutral-300/90">
+            <h3 className="fluid-h3 card-title text-neutral-100">Vision</h3>
+            <p className="mt-2 text-neutral-300/90 card-content">
               To become a catalyst for sustainable innovation, human progress,
               and transformative impact worldwide.
             </p>
           </div>
           <div className="card-lift rounded-2xl p-6 border border-white/12 bg-white/[0.03] transition-transform hover:-translate-y-1">
-            <h3 className="fluid-h3 font-semibold text-neutral-100">Mission</h3>
-            <p className="mt-2 text-neutral-300/90">
+            <h3 className="fluid-h3 card-title text-neutral-100">Mission</h3>
+            <p className="mt-2 text-neutral-300/90 card-content">
               To pioneer ideas, foster growth, and create lasting value through
               collaboration, technology, and purpose‑driven ventures.
             </p>
@@ -436,8 +433,8 @@ export default function QuantiaGravitasLanding() {
             <div className="flex items-start gap-3">
               <Globe2 className="mt-1 size-5 text-neutral-300" />
               <div>
-                <h4 className="font-semibold text-neutral-100">Global Perspective</h4>
-                <p className="mt-1 text-neutral-300/90">Thinking beyond borders with worldwide relevance.</p>
+                <h4 className="card-title text-neutral-100">Global Perspective</h4>
+                <p className="mt-1 text-neutral-300/90 card-content">Thinking beyond borders with worldwide relevance.</p>
               </div>
             </div>
           </div>
@@ -445,8 +442,8 @@ export default function QuantiaGravitasLanding() {
             <div className="flex items-start gap-3">
               <Sparkles className="mt-1 size-5 text-neutral-300" />
               <div>
-                <h4 className="font-semibold text-neutral-100">Innovation at Core</h4>
-                <p className="mt-1 text-neutral-300/90">Embracing bold ideas and transformative models.</p>
+                <h4 className="card-title text-neutral-100">Innovation at Core</h4>
+                <p className="mt-1 text-neutral-300/90 card-content">Embracing bold ideas and transformative models.</p>
               </div>
             </div>
           </div>
@@ -454,8 +451,8 @@ export default function QuantiaGravitasLanding() {
             <div className="flex items-start gap-3">
               <Leaf className="mt-1 size-5 text-neutral-300" />
               <div>
-                <h4 className="font-semibold text-neutral-100">Sustainability</h4>
-                <p className="mt-1 text-neutral-300/90">Growth that respects people, planet, and purpose.</p>
+                <h4 className="card-title text-neutral-100">Sustainability</h4>
+                <p className="mt-1 text-neutral-300/90 card-content">Growth that respects people, planet, and purpose.</p>
               </div>
             </div>
           </div>
@@ -463,16 +460,16 @@ export default function QuantiaGravitasLanding() {
             <div className="flex items-start gap-3">
               <ShieldCheck className="mt-1 size-5 text-neutral-300" />
               <div>
-                <h4 className="font-semibold text-neutral-100">Gravitas in Action</h4>
-                <p className="mt-1 text-neutral-300/90">Built on trust, depth, and measurable impact.</p>
+                <h4 className="card-title text-neutral-100">Gravitas in Action</h4>
+                <p className="mt-1 text-neutral-300/90 card-content">Built on trust, depth, and measurable impact.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="mt-8 card-lift rounded-2xl border border-white/12 p-6 bg-white/[0.03]">
-          <h3 className="fluid-h3 font-semibold text-neutral-100 mb-2">Our Edge</h3>
-          <ul className="grid sm:grid-cols-2 gap-2 text-neutral-300/90">
+          <h3 className="fluid-h3 card-title text-neutral-100 mb-2">Our Edge</h3>
+          <ul className="grid sm:grid-cols-2 gap-2 text-neutral-300/90 card-content">
             <li>• A UAE-based enterprise with a global vision</li>
             <li>• Rooted in credibility and innovation</li>
             <li>• Built for adaptability in an evolving world</li>
@@ -513,11 +510,11 @@ export default function QuantiaGravitasLanding() {
               className="card-lift h-full min-h-[168px] flex flex-col rounded-2xl border border-white/12 p-6 bg-white/[0.03] transition-transform hover:-translate-y-1"
             >
               <div className="min-h-[48px] md:min-h-[56px]">
-                <h4 className="font-semibold text-neutral-100 leading-snug">
+                <h4 className="card-title text-neutral-100 leading-snug">
                   {card.title}
                 </h4>
               </div>
-              <p className="mt-2 text-sm text-neutral-400">{card.desc}</p>
+              <p className="mt-2 text-sm text-neutral-400 card-content">{card.desc}</p>
             </div>
           ))}
         </div>
@@ -551,9 +548,9 @@ export default function QuantiaGravitasLanding() {
             >
               <div className="flex items-center gap-2">
                 <MapPin className="size-4 text-neutral-400" />
-                <h4 className="font-semibold text-neutral-100">{n.city}</h4>
+                <h4 className="card-title text-neutral-100">{n.city}</h4>
               </div>
-              <p className="mt-1 text-sm text-neutral-400">{n.tag}</p>
+              <p className="mt-1 text-sm text-neutral-400 card-content">{n.tag}</p>
             </div>
           ))}
         </div>
@@ -612,20 +609,20 @@ export default function QuantiaGravitasLanding() {
         </div>
         <div className="mt-8 grid md:grid-cols-2 gap-8 gsap-stagger">
           <div className="card-lift rounded-2xl border border-white/12 p-6 bg-white/[0.03] transition-transform hover:-translate-y-1">
-            <h4 className="font-semibold text-neutral-100">
+            <h4 className="card-title text-neutral-100">
               Guided by the UN SDGs
             </h4>
-            <p className="mt-2 text-sm text-neutral-300/90">
+            <p className="mt-2 text-sm text-neutral-300/90 card-content">
               From fostering inclusive growth to advancing climate‑conscious
               innovation, our philosophy embraces globally recognized goals for
               people and planet.
             </p>
           </div>
           <div className="card-lift rounded-2xl border border-white/12 p-6 bg-white/[0.03] transition-transform hover:-translate-y-1">
-            <h4 className="font-semibold text-neutral-100">
+            <h4 className="card-title text-neutral-100">
               Impact You Can Trust
             </h4>
-            <p className="mt-2 text-sm text-neutral-300/90">
+            <p className="mt-2 text-sm text-neutral-300/90 card-content">
               We prioritize measurable outcomes, transparent reporting, and
               responsible growth.
             </p>
