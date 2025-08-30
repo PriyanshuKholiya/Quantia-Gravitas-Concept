@@ -33,11 +33,9 @@ const Section = ({ title, subtitle, id, index, className = "", children }) => (
     <Container>
       <div className="mb-10 sm:mb-12">
         <div className="border-t border-white/10 pt-6">
-          {typeof index !== "undefined" && (
-            <h2 className="section-header mb-4 text-[14px] tracking-[0.2em] uppercase text-neutral-400/80">
-              ( {String(index).padStart(2, "0")} ) {title}
-            </h2>
-          )}
+          <h2 className="section-header mb-4 text-[14px] tracking-[0.2em] uppercase text-neutral-400/80">
+            {title}
+          </h2>
           {subtitle && (
             <p className="mt-3 max-w-3xl text-neutral-400 leading-relaxed card-content">
               {subtitle}
@@ -129,6 +127,20 @@ export default function QuantiaGravitasLanding() {
           trigger: ".hero-section",
           start: "top top",
           end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // Hide scroll widget when scrolling past hero
+      gsap.to(".scroll-widget", {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".hero-section",
+          start: "center center",
+          end: "bottom center",
           scrub: true,
         },
       });
@@ -349,6 +361,14 @@ export default function QuantiaGravitasLanding() {
             </div>
           </motion.div>
         </Container>
+        
+        {/* Scroll Down Widget */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-widget">
+          <div className="flex flex-col items-center gap-3 text-neutral-400 cursor-pointer group" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+            <span className="text-xs tracking-[0.3em] uppercase font-medium group-hover:text-neutral-300 transition-colors">Scroll</span>
+            <div className="w-0.5 h-10 bg-gradient-to-b from-neutral-400 via-neutral-400 to-transparent group-hover:from-neutral-300 group-hover:via-neutral-300 transition-all duration-300"></div>
+          </div>
+        </div>
       </section>
 
       {/* About */}
@@ -369,7 +389,7 @@ export default function QuantiaGravitasLanding() {
 
           {/* Right: vertical divider column with lead copy and a supporting card */}
           <div className="v-divider">
-            <p className="lead-lg text-neutral-300/90">
+            <p className="headquarters-text text-neutral-300/90">
               Headquartered at the NuVentures Centre Free Zone, Ajman, we stand
               at the intersection of global trade, culture, and ideas.
             </p>

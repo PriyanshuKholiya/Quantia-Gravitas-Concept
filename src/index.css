@@ -145,11 +145,9 @@ html { scrollbar-gutter: stable; }
   color: #000000 !important;
 }
 
-/* Body text with premium fonts - more sophisticated */
+/* Body text with premium fonts */
 p, li, .text-body {
   font-family: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.01em;
 }
 
 /* Headings with premium fonts */
@@ -157,21 +155,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", "Cormorant Garamond", "Times New Roman", serif;
 }
 
-/* Card titles and content - more sophisticated */
+/* Card titles and content */
 .card-title {
   font-family: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: -0.01em;
 }
 
 .card-content {
   font-family: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.005em;
-  line-height: 1.6;
 }
 
-/* Light theme overrides: applied when <html class="theme-light"> */
+/* Light theme overrides: applied when &lt;html class="theme-light"&gt; */
 html.theme-light {
   color-scheme: light;
   color: #0a0a0a;
@@ -260,7 +254,7 @@ html.theme-light .hero-bg {
   background-image: radial-gradient(60% 60% at 50% 0%, var(--lux-accent-weak), transparent 60%) !important;
 }
 
-/* Refined cards and pills with luxury green accents */
+/* Refined cards and pills */
 html.theme-light .card-lift {
   background-color: rgba(45,80,22,0.035) !important;
   border-color: rgba(0,0,0,0.08) !important;
@@ -345,20 +339,21 @@ html.theme-light ::selection {
 
 /* Lux Light v3 — paper aesthetic and refined dividers inspired by reference */
 html.theme-light {
-  --paper: #F5F0E9;              /* warm parchment */
+  --paper: #d1ebdb;              /* subtle luxury green parchment */
   --ink: #1A1A1A;                /* rich charcoal */
   --muted-ink: #2B2B2B;          /* body text */
-  --divider: #E6DED2;            /* hairline rule */
-  --divider-strong: #DBD3C7;     /* emphasized rule */
+  --divider: #E0E4D8;            /* hairline rule with green tint */
+  --divider-strong: #D5D9CD;     /* emphasized rule with green tint */
 }
 
-/* Site-wide paper background with subtle luxury green vignette */
+/* Site-wide paper background with prominent luxury green vignette */
 html.theme-light main {
   background-color: var(--paper) !important;
   background-image:
-    radial-gradient(1100px 700px at 12% -10%, rgba(45,80,22,0.065), transparent 65%),
-    radial-gradient(900px 560px at 100% 115%, rgba(0,0,0,0.045), transparent 60%);
-  background-blend-mode: multiply, normal;
+    radial-gradient(1100px 700px at 12% -10%, rgba(45,80,22,0.15), transparent 65%),
+    radial-gradient(900px 560px at 100% 115%, rgba(45,80,22,0.08), transparent 60%),
+    radial-gradient(800px 500px at 80% 20%, rgba(45,80,22,0.06), transparent 70%);
+  background-blend-mode: multiply, normal, normal;
 }
 
 /* Header refinement and nav links */
@@ -382,12 +377,12 @@ html.theme-light .border-white\/12,
 html.theme-light .border-white\/15 { border-color: var(--divider) !important; }
 
 html.theme-light .card-lift {
-  background-color: rgba(255,255,255,0.82) !important;
-  border-color: #E8E1D6 !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 10px 20px rgba(0,0,0,0.05);
+  background-color: rgba(240,242,237,0.85) !important;
+  border-color: #E0E4D8 !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 10px 20px rgba(45,80,22,0.08);
 }
 html.theme-light .pill-animate {
-  background-color: rgba(255,255,255,0.72) !important;
+  background-color: rgba(240,242,237,0.75) !important;
   border-color: var(--divider) !important;
   color: var(--muted-ink) !important;
 }
@@ -437,12 +432,13 @@ html.theme-light .prose strong { color: #111827 !important; }
 html.theme-light main {
   /* override previous background stack to include subtle noise */
   background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='table' tableValues='0 0 0 0.015 0.03'/></feComponentTransfer></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
-    radial-gradient(1100px 700px at 12% -10%, rgba(45,80,22,0.065), transparent 65%),
-    radial-gradient(900px 560px at 100% 115%, rgba(0,0,0,0.045), transparent 60%);
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-size: 140px 140px, auto, auto;
-  background-blend-mode: multiply, multiply, normal;
+    url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'&gt;&lt;filter id='n'&gt;&lt;feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/&gt;&lt;feColorMatrix type='saturate' values='0'/&gt;&lt;feComponentTransfer&gt;&lt;feFuncA type='table' tableValues='0 0 0 0.015 0.03'/&gt;&lt;/feComponentTransfer&gt;&lt;/filter&gt;&lt;rect width='100%' height='100%' filter='url(%23n)'/&gt;&lt;/svg&gt;"),
+    radial-gradient(1100px 700px at 12% -10%, rgba(45,80,22,0.15), transparent 65%),
+    radial-gradient(900px 560px at 100% 115%, rgba(45,80,22,0.08), transparent 60%),
+    radial-gradient(800px 500px at 80% 20%, rgba(45,80,22,0.06), transparent 70%);
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 140px 140px, auto, auto, auto;
+  background-blend-mode: multiply, multiply, normal, normal;
 }
 
 /* Left-edge cut fix: ensure no reserved gutter and no horizontal overflow */
@@ -633,6 +629,40 @@ html.theme-light .mega-text { color: #0b0b0b; }
 .lead-lg {
   font-size: clamp(1.05rem, 0.7vw + 0.95rem, 1.45rem);
   line-height: 1.65;
+}
+
+/* Sophisticated headquarters text styling */
+.headquarters-text {
+  font-family: "Playfair Display", "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(1.1rem, 0.8vw + 1rem, 1.5rem);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Light theme headquarters text */
+html.theme-light .headquarters-text {
+  color: rgba(45, 80, 22, 0.9) !important;
+  font-style: normal;
+}
+
+/* Scroll down widget styling */
+.scroll-widget {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Editorial display quote (large but not uppercase) */
