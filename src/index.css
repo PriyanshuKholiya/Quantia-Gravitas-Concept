@@ -95,7 +95,7 @@ button:focus-visible {
 }
 
 /* Scrollbar layout stability */
-html { scrollbar-gutter: stable both-edges; }
+html { scrollbar-gutter: stable; }
 
 /* Fluid paragraph sizing */
 .fluid-p { font-size: clamp(0.95rem, 0.5vw + 0.85rem, 1.125rem); line-height: 1.65; }
@@ -111,5 +111,480 @@ html { scrollbar-gutter: stable both-edges; }
 /* Legacy display utility kept for compatibility */
 .font-display {
   font-family: "Outfit", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  letter-spacing: -0.01em;
+}
+
+/* Light theme overrides: applied when &lt;html class="theme-light"&gt; */
+html.theme-light {
+  color-scheme: light;
+  color: #0a0a0a;
+  background-color: #ffffff;
+}
+
+/* Links */
+html.theme-light a { color: #404040; }
+html.theme-light a:hover { color: #0a0a0a; }
+
+/* Buttons (base) */
+html.theme-light button {
+  background-color: rgba(0,0,0,0.04);
+  color: #0a0a0a;
+  border-color: rgba(0,0,0,0.15);
+}
+html.theme-light button:hover {
+  background-color: rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.25);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+/* Cards and subtle surfaces */
+html.theme-light .card-lift {
+  background-color: rgba(0,0,0,0.03) !important;
+  border-color: rgba(0,0,0,0.10) !important;
+}
+html.theme-light .pill-animate { background-color: rgba(0,0,0,0.04); }
+html.theme-light .pill-animate:hover {
+  background-color: rgba(0,0,0,0.06);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* Common text utility remaps used in the app (keep list minimal and targeted) */
+html.theme-light .text-neutral-100 { color: #0a0a0a !important; }
+html.theme-light .text-neutral-200 { color: #171717 !important; }
+html.theme-light .text-neutral-300 { color: #262626 !important; }
+html.theme-light .text-neutral-400 { color: #404040 !important; }
+html.theme-light .text-neutral-500 { color: #525252 !important; }
+
+/* Border utility remaps (white alpha -> black alpha) */
+html.theme-light .border-white\/10 { border-color: rgba(0,0,0,0.10) !important; }
+html.theme-light .border-white\/12 { border-color: rgba(0,0,0,0.12) !important; }
+html.theme-light .border-white\/15 { border-color: rgba(0,0,0,0.15) !important; }
+
+/* Background utility remaps (white alpha -> black alpha) */
+html.theme-light .bg-white\/\[0\.03\] { background-color: rgba(0,0,0,0.03) !important; }
+html.theme-light .bg-white\/\[0\.05\] { background-color: rgba(0,0,0,0.05) !important; }
+html.theme-light .bg-white\/\[0\.06\] { background-color: rgba(0,0,0,0.06) !important; }
+html.theme-light .bg-white\/\[0\.10\] { background-color: rgba(0,0,0,0.10) !important; }
+html.theme-light .bg-white\/\[0\.15\] { background-color: rgba(0,0,0,0.15) !important; }
+
+/* Lux light theme refinement — higher contrast and warm accents */
+html.theme-light {
+  --lux-accent: #B68C4A;          /* champagne gold */
+  --lux-accent-weak: rgba(182,140,74,0.10);
+  --lux-accent-weak-2: rgba(182,140,74,0.16);
+  --lux-accent-border: rgba(182,140,74,0.28);
+  --lux-shadow: 0 10px 30px rgba(182,140,74,0.10), 0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* Lift contrast for muted copy that used neutral shades */
+html.theme-light .text-neutral-300\/90 { color: rgba(38,38,38,0.90) !important; }
+html.theme-light .text-neutral-400 { color: #525252 !important; }
+html.theme-light .text-neutral-400\/90 { color: rgba(82,82,82,0.90) !important; }
+html.theme-light .text-neutral-500 { color: #737373 !important; }
+html.theme-light .text-neutral-500\/90 { color: rgba(115,115,115,0.90) !important; }
+
+/* Inputs and placeholders for forms */
+html.theme-light input,
+html.theme-light textarea {
+  background-color: #f7f7f8 !important;
+  border-color: #e5e7eb !important;
+  color: #0a0a0a !important;
+}
+html.theme-light input::placeholder,
+html.theme-light textarea::placeholder { color: #9ca3af !important; }
+
+/* Header brand icon and separation */
+html.theme-light header .bg-white\/10 { background-color: rgba(0,0,0,0.06) !important; }
+html.theme-light header .text-white { color: #0a0a0a !important; }
+html.theme-light header { border-color: rgba(0,0,0,0.08) !important; }
+
+/* Hero background with subtle champagne glow for a luxurious feel */
+html.theme-light .hero-bg {
+  background-image: radial-gradient(60% 60% at 50% 0%, var(--lux-accent-weak), transparent 60%) !important;
+}
+
+/* Refined cards and pills */
+html.theme-light .card-lift {
+  background-color: rgba(182,140,74,0.035) !important;
+  border-color: rgba(0,0,0,0.08) !important;
+  box-shadow: var(--lux-shadow);
+}
+html.theme-light .pill-animate {
+  background-color: rgba(182,140,74,0.06) !important;
+  border-color: var(--lux-accent-border) !important;
+  color: #1f2937 !important;
+}
+
+/* Primary action accents (hero CTA + Connect) */
+html.theme-light .hero-cta-1,
+html.theme-light header a[href="#contact"] {
+  border-color: var(--lux-accent-border) !important;
+  background-color: var(--lux-accent-weak) !important;
+  color: #1f2937 !important;
+  box-shadow: 0 8px 28px var(--lux-accent-weak);
+}
+html.theme-light .hero-cta-1:hover,
+html.theme-light header a[href="#contact"]:hover {
+  background-color: var(--lux-accent-weak-2) !important;
+}
+
+/* Ensure button/link text remains readable even if 'text-white' was set */
+html.theme-light button.text-white,
+html.theme-light a.text-white { color: #0a0a0a !important; }
+
+/* Lux Light v2 — readability + premium accents */
+html.theme-light {
+  /* no changes to variables declared earlier */
+}
+
+/* Elevate default copy contrast in light theme */
+html.theme-light p,
+html.theme-light li,
+html.theme-light .fluid-p { color: #374151 !important; } /* slate-700 */
+
+/* Headings: crisp black for premium look */
+html.theme-light h1,
+html.theme-light h2,
+html.theme-light h3,
+html.theme-light h4 { color: #0b0b0b !important; }
+
+/* Fix faded utility shades frequently used in the UI */
+html.theme-light .text-neutral-300\/90 { color: rgba(38,38,38,0.92) !important; }  /* was too light */
+html.theme-light .text-neutral-400\/80 { color: rgba(64,64,64,0.85) !important; }  /* section kickers */
+html.theme-light .text-neutral-400\/90 { color: rgba(64,64,64,0.92) !important; }
+html.theme-light .text-neutral-200\/90 { color: rgba(23,23,23,0.92) !important; }
+
+/* Prose blocks (Manifesto) */
+html.theme-light .prose { color: #374151 !important; }                 /* body text */
+html.theme-light .prose h1,
+html.theme-light .prose h2,
+html.theme-light .prose h3,
+html.theme-light .prose strong { color: #111827 !important; }          /* headings/emphasis */
+
+/* Secondary hero CTA readability on light */
+html.theme-light .hero-cta-2 {
+  color: #111827 !important;
+  background-color: transparent !important;
+}
+html.theme-light .hero-cta-2:hover {
+  background-color: rgba(0,0,0,0.04) !important;
+}
+
+/* Inputs: premium focus ring and clearer placeholders */
+html.theme-light input:focus,
+html.theme-light textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(182,140,74,0.22) !important; /* champagne ring */
+  border-color: rgba(182,140,74,0.28) !important;
+}
+html.theme-light input::placeholder,
+html.theme-light textarea::placeholder { color: #9aa3ae !important; }
+
+/* Selection highlight with subtle champagne */
+html.theme-light ::selection {
+  background-color: rgba(182,140,74,0.22);
+  color: #111827;
+}
+
+/* Lux Light v3 — paper aesthetic and refined dividers inspired by reference */
+html.theme-light {
+  --paper: #F5F0E9;              /* warm parchment */
+  --ink: #1A1A1A;                /* rich charcoal */
+  --muted-ink: #2B2B2B;          /* body text */
+  --divider: #E6DED2;            /* hairline rule */
+  --divider-strong: #DBD3C7;     /* emphasized rule */
+}
+
+/* Site-wide paper background with subtle warm vignette */
+html.theme-light main {
+  background-color: var(--paper) !important;
+  background-image:
+    radial-gradient(1100px 700px at 12% -10%, rgba(182,140,74,0.065), transparent 65%),
+    radial-gradient(900px 560px at 100% 115%, rgba(0,0,0,0.045), transparent 60%);
+  background-blend-mode: multiply, normal;
+}
+
+/* Header refinement and nav links */
+html.theme-light header {
+  background-color: rgba(255,255,255,0.85) !important;
+  border-color: var(--divider) !important;
+}
+html.theme-light header nav a {
+  color: #2b2b2b !important;
+}
+html.theme-light header nav a:hover {
+  color: #111111 !important;
+  text-decoration: underline;
+  text-decoration-color: var(--lux-accent);
+  text-underline-offset: 3px;
+}
+
+/* Section top rules, cards, pills — align to refined divider color */
+html.theme-light .border-white\/10,
+html.theme-light .border-white\/12,
+html.theme-light .border-white\/15 { border-color: var(--divider) !important; }
+
+html.theme-light .card-lift {
+  background-color: rgba(255,255,255,0.82) !important;
+  border-color: #E8E1D6 !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 10px 20px rgba(0,0,0,0.05);
+}
+html.theme-light .pill-animate {
+  background-color: rgba(255,255,255,0.72) !important;
+  border-color: var(--divider) !important;
+  color: var(--muted-ink) !important;
+}
+
+/* Typography polishing for the paper look */
+html.theme-light p,
+html.theme-light li,
+html.theme-light .fluid-p { color: var(--muted-ink) !important; }
+
+html.theme-light h1,
+html.theme-light h2,
+html.theme-light h3,
+html.theme-light h4 { color: #0b0b0b !important; }
+
+/* Kicker and small caps copy */
+html.theme-light .hero-kicker p,
+html.theme-light p[class*="tracking-"],
+html.theme-light .text-neutral-400\/80 { color: rgba(64,64,64,0.88) !important; }
+
+/* CTA refinements to echo minimal luxe feel */
+html.theme-light .hero-cta-1,
+html.theme-light header a[href="#contact"] {
+  border-color: var(--divider) !important;
+  background-color: rgba(182,140,74,0.08) !important;
+  color: #1f2937 !important;
+  box-shadow: 0 8px 24px rgba(182,140,74,0.10);
+}
+html.theme-light .hero-cta-1:hover,
+html.theme-light header a[href="#contact"]:hover {
+  background-color: rgba(182,140,74,0.14) !important;
+}
+
+/* Hairline hr / rules (if used) */
+html.theme-light hr {
+  border: none;
+  border-top: 1px solid var(--divider);
+}
+
+/* Ensure any inverted prose uses light-mode palette */
+html.theme-light .prose { color: #374151 !important; }
+html.theme-light .prose h1,
+html.theme-light .prose h2,
+html.theme-light .prose h3,
+html.theme-light .prose strong { color: #111827 !important; }
+
+/* Paper grain overlay to better match the reference aesthetic */
+html.theme-light main {
+  /* override previous background stack to include subtle noise */
+  background-image:
+    url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'&gt;&lt;filter id='n'&gt;&lt;feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/&gt;&lt;feColorMatrix type='saturate' values='0'/&gt;&lt;feComponentTransfer&gt;&lt;feFuncA type='table' tableValues='0 0 0 0.015 0.03'/&gt;&lt;/feComponentTransfer&gt;&lt;/filter&gt;&lt;rect width='100%' height='100%' filter='url(%23n)'/&gt;&lt;/svg&gt;"),
+    radial-gradient(1100px 700px at 12% -10%, rgba(182,140,74,0.065), transparent 65%),
+    radial-gradient(900px 560px at 100% 115%, rgba(0,0,0,0.045), transparent 60%);
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-size: 140px 140px, auto, auto;
+  background-blend-mode: multiply, multiply, normal;
+}
+
+/* Left-edge cut fix: ensure no reserved gutter and no horizontal overflow */
+html, body, #root {
+  margin: 0 !important;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Reusable luxury pill buttons */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 650;
+  font-size: 0.95rem;
+  line-height: 1;
+  border: 1.5px solid transparent;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 220ms ease, transform 160ms ease;
+  -webkit-backdrop-filter: saturate(1.2) blur(6px);
+  backdrop-filter: saturate(1.2) blur(6px);
+  will-change: transform, box-shadow, background-color, border-color;
+}
+.btn-pill svg { width: 1rem; height: 1rem; }
+.btn-pill.btn-sm { padding: 0.5rem 0.9rem; font-size: 0.72rem; border-width: 1.25px; }
+.btn-pill:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(182,140,74,0.28);
+}
+.btn-pill:hover { transform: translateY(-1px); }
+.btn-pill:active { transform: translateY(0); }
+
+/* Dark theme defaults (root) */
+.btn-outline {
+  color: #fafafa;
+  border-color: rgba(255,255,255,0.35);
+  background-color: rgba(255,255,255,0.04);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.btn-outline:hover {
+  background-color: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.45);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+.btn-solid {
+  color: #111827;
+  background-color: rgba(255,255,255,0.92);
+  border-color: transparent;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+.btn-solid:hover {
+  background-color: rgba(255,255,255,0.98);
+}
+
+/* Light theme overrides for paper aesthetic */
+html.theme-light .btn-outline {
+  color: var(--ink, #1A1A1A);
+  border-color: rgba(0,0,0,0.22);
+  background-color: rgba(255,255,255,0.72);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.65);
+}
+html.theme-light .btn-outline:hover {
+  background-color: rgba(255,255,255,0.92);
+  border-color: rgba(0,0,0,0.28);
+}
+html.theme-light .btn-solid {
+  color: var(--ink, #1A1A1A);
+  background-color: #F3EEE7; /* warm cream */
+  border-color: var(--divider, #E6DED2);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.65);
+}
+html.theme-light .btn-solid:hover {
+  background-color: #F7F1EA;
+}
+
+/* Interactive shine + ripple for pill buttons */
+.btn-pill {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.btn-pill::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  bottom: -40%;
+  left: -120%;
+  width: 60%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 45%, rgba(255,255,255,0) 100%);
+  transform: translateX(0) skewX(-20deg);
+  opacity: 0;
+  transition: transform 600ms ease, opacity 600ms ease;
+  pointer-events: none;
+}
+.btn-pill:hover::after {
+  transform: translateX(320%) skewX(-20deg);
+  opacity: 0.85;
+}
+.btn-pill svg {
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+.btn-pill:hover svg {
+  transform: translateX(2px);
+}
+
+/* Press ripple */
+.btn-pill::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+}
+.btn-pill:active::before {
+  width: 220%;
+  height: 220%;
+  opacity: 0;
+  animation: btn-ripple 600ms ease forwards;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%);
+}
+@keyframes btn-ripple {
+  0% { opacity: .45; width: 0; height: 0; }
+  100% { opacity: 0; width: 220%; height: 220%; }
+}
+
+/* Light theme ripple tint */
+html.theme-light .btn-pill:active::before {
+  background: radial-gradient(circle at center, rgba(182,140,74,0.30), rgba(182,140,74,0) 60%);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn-pill::after { transition: none; transform: none; opacity: 0; }
+  .btn-pill svg { transition: none; }
+}
+
+/* ===== Creative Typography Suite (inspired by reference) ===== */
+.accent {
+  /* default: inherit the surrounding text color (no gold site-wide) */
+  color: currentColor;
+}
+/* Keep the gold accent only inside the Roots section (#about) */
+#about .accent { color: #F4D19B; }
+
+/* Light theme: inherit by default; gold only inside Roots */
+html.theme-light .accent { color: inherit !important; }
+html.theme-light #about .accent { color: var(--lux-accent) !important; }
+
+/* Grid layout with optional vertical divider on the right column */
+.creative-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .creative-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem 3rem;
+  }
+}
+.v-divider {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .v-divider { padding-left: 1.5rem; }
+}
+html.theme-light .v-divider { border-color: var(--divider) !important; }
+
+/* Oversized uppercase statement for hero/section intros */
+.mega-text {
+  font-family: "Outfit", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+  font-size: clamp(1.75rem, 2.6vw + 1rem, 4.25rem);
+  line-height: 1.08;
+  word-spacing: 0.02em;
+}
+html.theme-light .mega-text { color: #0b0b0b; }
+
+/* Large lead paragraph to pair with mega-text blocks */
+.lead-lg {
+  font-size: clamp(1.05rem, 0.7vw + 0.95rem, 1.45rem);
+  line-height: 1.65;
+}
+
+/* Editorial display quote (large but not uppercase) */
+.display-quote {
+  font-family: "Fraunces", "Outfit", "Inter", ui-serif, ui-sans-serif, system-ui, -apple-system;
+  font-size: clamp(1.35rem, 1.2vw + 1rem, 2.1rem);
+  line-height: 1.25;
   letter-spacing: -0.01em;
 }
